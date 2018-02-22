@@ -1,0 +1,84 @@
+.s-works
+	padding: 105px 0 0
+	&__text
+		margin: 0
+		margin-bottom: 98px
+		padding: 0 10%
+		text-align: center
+		+r(500)
+			padding: 0
+
+
+.works-gallery
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	align-content: flex-start
+	align-items: flex-start
+	height: 780px
+	max-width: $maxwidth
+	margin: 0 auto
+	overflow: hidden
+	// overflow-x: scroll
+	+r(850)
+		flex-direction: row
+		height: auto
+
+.work
+	position: relative
+	display: block
+	width: 25%
+	height: 50%
+	overflow: hidden
+	&.work_large
+		height: 100%
+		+r(850)
+			height: 400px
+			+r(450)
+				width: 100%
+	+r(1090)
+		width: 33.33333333%
+	+r(850)
+		width: 50%
+		height: 400px
+	+r(450)
+		width: 100%
+	&:hover
+		.hover-content
+			opacity: 1
+	
+	&__cover
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		img
+			width: 100%
+			height: 100%
+	
+	&__hover-content
+		text-align: center
+		color: #fff
+		transition: opacity .35s ease
+
+	&__icon
+		margin-top: 26px
+		font-size: 30px
+		line-height: 1
+		.icon
+			fill: #fff
+
+	&__title
+		margin: 10px 0 0
+		+mont
+		font-size: 14px
+		font-weight: 400
+		text-transform: uppercase
+	
+	&__text
+		margin: 0
+		margin-top: 8px
+		font-size: 15px
+		font-style: italic
+		font-weight: 300

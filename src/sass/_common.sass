@@ -1,0 +1,457 @@
+.screen
+	height: 300vh
+
+
+
+img[class*=lazyload]
+	opacity: 0
+	transition: opacity .5s ease
+img.lazyloaded
+	opacity: 1
+	
+
+
+.container
+	+wrapper
+
+
+.button
+	display: block
+	padding: 11px 29px
+	font-family: Montserrat
+	font-size: 14px
+	font-weight: bold
+	line-height: 1
+	text-decoration: none
+	text-transform: uppercase
+	cursor: pointer
+	color: white
+	background: none
+	border: none
+
+	&_inline
+		display: inline-block
+	&_outline
+		border: 3px solid white
+	&_green
+		background-color: $green
+		transition: background .25s ease
+		&:hover
+			background-color: darken($green, 10%)
+
+
+
+
+.s-wide
+	position: relative
+	padding: 85px 0 120px
+	font-size: 15px
+
+	&__pretitle
+		+script
+		display: block
+		font-size: 24px
+		text-align: center
+		color: #333
+
+	&__title
+		+mont
+		position: relative
+		margin-top: 12px
+		margin-bottom: 79px
+		font-size: 30px
+		font-weight: bold
+		line-height: 1
+		letter-spacing: -.02em
+		text-align: center
+		text-transform: uppercase
+		color: #333
+		&::after
+			content: ''
+			position: absolute
+			bottom: -38px
+			left: 50%
+			width: 60px
+			height: 3px
+			background-color: #f38181
+			transform: translateX(-50%)
+			
+.s-white
+	color: #999999
+	background-color: #fff
+
+.s-bg
+	background-size: cover
+	background-position: 50% 50%
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#fff, .85)
+
+	> *
+		position: relative
+		z-index: 3
+
+
+.gallery
+	+row
+
+.gallery-item
+
+	&__content-wrapper
+		position: relative
+		display: block
+		background-color: $green
+
+	&__content
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		width: 100%
+		height: 100%
+		text-decoration: none
+		color: #fff
+		transition: transform .25s $tr1
+		&:hover
+			transform: translate(-10px, -10px)
+			.hover-content
+				opacity: 1
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+
+.gallery-item-signature
+	text-align: center
+	color: #333333
+	&__title
+		+mont
+		margin-top: 25px
+		margin-bottom: 4px
+		font-size: 15px
+		font-weight: 400
+		letter-spacing: -.04em
+		text-transform: uppercase
+	&__position
+		font-size: 15px
+		font-style: italic
+		font-weight: 300
+		line-height: 1.6
+		color: #999
+
+.hover-content
+	position: absolute
+	top: 0
+	left: 0
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 100%
+	opacity: 0
+	transition: opacity .25s $tr1
+	&::after
+		content: ''
+		position: absolute	
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 1
+		opacity: .9
+		+g(#f38181, #fce38a)
+
+	&__inner
+		position: relative
+		z-index: 10
+		
+
+
+	&__icon
+		display: inline-block
+		line-height: 1
+		.icon
+			font-size: 23px
+			fill: #fff
+
+	&__title
+		+mont
+		display: inline-block
+		margin-top: 8px
+		font-size: 18px
+		font-weight: bold
+		line-height: 1
+		text-transform: uppercase
+
+
+
+.s-green
+	color: #fff
+	background-color: #95e1d3
+
+
+
+
+[class^='swiper-button-']
+	display: flex
+	align-items: center
+	background: none
+	transition: opacity .25s ease
+	&:hover
+		.icon
+			fill: $green
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		right: -10px
+		bottom: 0
+		left: -10px
+	.icon
+		font-size: 20px
+		fill: #ccc
+		transition: fill .25s ease
+
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled
+	opacity: .4
+
+.swiper-button-next
+	right: 23px
+	transform: rotate(180deg)
+	+r(650)
+		right: 14px
+
+.swiper-button-prev
+	left: 23px
+	+r(650)
+		left: 14px
+
+.swiper-slide
+	display: flex
+	height: auto
+
+
+.s-gray
+	background-color: #f8f8f8
+
+.s-reviews-carousel
+	padding: 40px 0
+	&_second
+		padding: 100px 0 130px
+		
+.carousel-review
+	flex: 1 1 auto
+	display: flex
+	align-items: center
+	margin: 0 80px
+	+r(650)
+		margin: 0 40px
+	+r(550)
+		flex-direction: column
+	&__avatar
+		flex: none
+		display: flex
+		align-items: center
+		width: 210px
+		height: 210px
+		margin-right: 30px
+		overflow: hidden
+		border-radius: 50%
+		+r(900)
+			width: 150px
+			height: 150px
+		+r(800)
+			width: 110px
+			height: 110px
+		+r(650)
+			width: 80px
+			height: 80px
+			margin-right: 15px
+		+r(550)
+			width: 100px
+			height: 100px
+			margin: 0
+			margin-bottom: 20px
+		&.anonim
+			border-radius: 0
+			img
+				width: auto
+				height: auto
+		img
+			width: 100%
+			height: 100%
+			max-width: 100%
+			max-height: 100%
+
+	&__text-wrap
+		flex: 1 1 auto
+
+	&__text
+		margin-bottom: 10px
+		font-size: 24px
+		font-style: italic
+		font-weight: 300
+		line-height: 1.5
+		color: #999
+		+r(1090)
+			font-size: 20px
+		+r(900)
+			font-size: 18px
+		+r(850)
+			font-size: 17px
+
+
+	&__author
+		+script
+		position: relative
+		font-size: 24px
+		color: #333
+		+r(850)
+			font-size: 20px
+		+r(550)
+			margin-top: 24px
+			margin-bottom: 20px
+			text-align: center
+			&::before
+				position: absolute
+				top: auto
+				bottom: -10px
+				left: 50%
+				margin: 0
+				transform: translateX(-50%)
+		&::before
+			content: ''
+			position: relative
+			top: -4px
+			display: inline-block
+			width: 60px
+			height: 3px
+			margin-right: 10px
+			background-color: #f38181
+
+
+
+input
+	padding: 7px 10px 7px 12px
+	font-size: 15px
+	font-style: italic
+	line-height: 1.6
+	color: #333
+	background-color: #fff
+	border: 1px solid #e7e7e7
+	outline: none
+	&:focus
+		box-shadow: inset 0 0 1px 1px lighten($green, 5%) 
+
+
+
+
+.hide-menu
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 100
+	display: flex
+	justify-content: center
+	align-items: center
+	overflow: auto
+	background-color: rgba(#DF7B75, .95)
+	opacity: 0
+	visibility: hidden
+	transition: opacity .3s ease, visibility .3s ease
+
+	+rmin(751)
+		display: none
+
+	.hide-menu__rotate
+		position: absolute
+		top: 50%
+		left: 50%
+		display: none
+		width: 90px
+		height: 90px
+		transform: translate(-50%, -50%)
+		+landscape
+			display: block
+
+	&.is-active
+		opacity: 1
+		visibility: visible
+
+		.hide-menu__inner
+			display: block
+
+	&.is-complete
+		.navigation__item
+			opacity: 1
+			transform: translateY(0)
+
+	&__inner
+		display: none
+		+landscape
+			display: none !important
+
+	&__navigation
+		.navigation__list
+			display: flex
+			flex-direction: column
+			align-items: center
+		.navigation__item
+			margin: 0
+			opacity: 0
+			transform: translateY(30px)
+			transition: opacity .25s ease, transform .25s ease
+			&:last-of-type
+				margin: 0
+		.navigation__link
+			font-size: 50px
+			font-weight: bold
+			&:hover, &:focus
+				&::after
+					transform-origin: left center
+			&::after
+				transform-origin: left center
+			+r(750)
+				font-size: 40px
+			+r(550)
+				font-size: 30px
+			+r(450)
+				font-size: 25px
+
+	&__social-wrap
+		position: absolute
+		right: 0
+		bottom: 30px
+		left: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		opacity: 0
+		transition: opacity .25s ease
+
+		.is-complete &
+			opacity: 1
+
+	&__social-link
+		display: flex
+		align-items: center
+		opacity: .65
+		transition: opacity .25s ease
+		&:hover
+			opacity: 1
+		&:not(:last-child)
+			margin-right: 15px
+		.icon
+			font-size: 21px
+			fill: #fff

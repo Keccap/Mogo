@@ -1,0 +1,68 @@
+.s-team
+	padding: 96px 0 113px
+	&__text
+		margin: 0
+		margin-bottom: 40px
+		padding: 0 10%
+		text-align: center
+		+r(500)
+			padding: 0
+
+
+.team-gallery
+	justify-content: center
+
+	&__item
+		+col
+		+size(4)
+		margin-top: 50px
+
+		+r(750)
+			+size(6)
+
+	&__content-wrapper
+		+prop(380, 470)
+
+	&__hover-content
+		.hover-content__inner
+			position: relative
+			top: 2px
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			max-width: 90%
+		.hover-content__title
+			letter-spacing: -.02em
+
+	&__social-link
+		position: relative
+		top: 1px
+		flex: 0 0 auto
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 56px
+		height: 56px
+		margin-bottom: 1px
+		background-color: $yellow
+		transition: background .25s ease
+		&:not(:last-child)
+			border-right: 1px solid #f38181
+		+r(1000)
+			width: 40px
+			height: 40px
+		+r(800)
+			width: 30px
+			height: 30px
+		.icon
+			font-size: 25px
+			fill: #f38181
+			transition: fill .25s ease
+			+r(1000)
+				font-size: 19px
+			+r(800)
+				font-size: 16px
+		&:hover
+			background-color: #f38181
+			.icon
+				fill: #fff

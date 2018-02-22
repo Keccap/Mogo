@@ -1,0 +1,169 @@
+.s-what-we-do
+	padding: 79px 0 120px
+	overflow: hidden
+
+	&__text
+		margin: 0
+		margin-bottom: 88px
+		padding: 0 10%
+		text-align: center
+		+r(500)
+			padding: 0
+		+r(800)
+			margin-bottom: 48px
+
+
+.activities
+	+rowF
+	img
+		max-width: 100%
+	
+	&__left
+		+col
+		+sizeMR(6)
+		
+		+r(800)
+			display: none
+
+
+	&__right
+		+col
+		+sizeF(6)
+		display: flex
+
+		+r(800)
+			+size(12)
+			height: 400px
+
+.activities-tabs
+	display: flex
+	flex-direction: column
+	width: 100%
+
+
+.activities-tab
+	display: flex
+	flex-direction: column
+	transition: flex .35s ease
+	+gpu
+	&:not(:last-child)
+		margin-bottom: 10px
+
+	&.is-active
+		flex: 1 0 auto
+		.activities-tab__content.scrollzone-container
+			flex: 1 0 auto
+			padding: 20px 24px 20px 18px
+			opacity: 1
+
+
+		.activities-tab__arrow
+			transform: scale(1, -1)
+
+	&__header
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		height: 60px
+		padding: 0 20px 0 15px
+		cursor: pointer
+		border: 1px solid #e5e5e5
+		+r(1090)
+			height: 40px
+		+r(800)
+			height: 60px
+
+
+	&__icon
+		position: relative
+		top: 3px
+		margin-right: 15px
+		font-size: 30px
+		+r(1090)
+			font-size: 22px
+		+r(800)
+			font-size: 30px
+		.icon
+			fill: $green
+
+	&__title
+		+mont
+		margin: 0
+		font-size: 14px
+		font-weight: 400
+		line-height: 1
+		text-transform: uppercase
+		+r(1090)
+			font-size: 12px
+		+r(800)
+			font-size: 14px
+
+	&__arrow
+		margin-left: auto
+		font-size: 12px
+		transition: transform .35s $tr1
+		.icon
+			fill: #ccc
+
+	&__content
+		+clearfix
+		position: relative
+		flex: 1 0 auto
+		height: 180px
+		padding: 20px 24px 20px 18px
+		overflow: hidden
+		font-size: 15px
+		font-style: italic
+		font-weight: 300
+		line-height: 24px
+		border: 1px solid #e5e5e5
+		border-top: none
+		transition: all .8s $tr1
+		+r(900)
+			font-size: 14px
+			line-height: 22px
+		&::after, &::before
+			content: ''
+			position: absolute
+			left: 0
+			z-index: 10
+			width: 100%
+			height: 20px
+			pointer-events: none
+		&::before
+			top: 0
+			+g(rgba(#fff, 1), transparent)
+		&::after
+			bottom: 0
+			+g(transparent, rgba(#fff, .8))
+		.scrollzone
+			padding-right: 30px
+			overflow: visible !important
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				transform: scale(3)
+
+
+		p
+			margin: 0
+			margin-bottom: 15px
+
+		.scrollbar-thumb
+			width: 5px
+			background: $green
+
+		.scrollbar-track-y
+			width: 5px
+			background: #f5f5f5
+			
+
+.scrollzone-container
+	transition: all .35s $tr1
+	height: 0
+	padding: 0
+	opacity: 0

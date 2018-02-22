@@ -1,0 +1,57 @@
+.s-services
+	padding-top: 103px
+	padding-bottom: 70px
+	&__title
+		margin-bottom: 56px
+
+.services
+	+row
+	padding: 0 13px
+
+.service
+	display: flex
+	justify-content: center
+	padding: 50px 30px 48px
+	+col
+	+sizeF(4)
+	&:nth-child(1), &:nth-child(2), &:nth-child(3)
+		border-bottom: 1px solid #e5e5e5
+
+	+r(900)
+		+sizeF(6)
+		&:nth-child(4)
+			border-bottom: 1px solid #e5e5e5
+
+	+r(650)
+		flex-direction: column
+		justify-content: flex-start
+		text-align: center
+
+	+r(430)
+		+sizeF(12)
+		padding: 30px 40px
+		&:not(:last-child)
+			border-bottom: 1px solid #e5e5e5
+
+	&__icon
+		position: relative
+		left: 3px
+		padding-right: 28px
+		+r(650)
+			left: 0
+			margin-bottom: 15px
+			padding-right: 0
+		.icon
+			font-size: 32px
+			fill: $green
+	&__text-wrap
+		max-width: 100%
+		min-width: 0
+
+	&__title
+		+mont
+		margin-bottom: 10px
+		font-size: 14px
+		line-height: 1
+		text-transform: uppercase
+		color: #333

@@ -1,0 +1,44 @@
+.s-adv
+	padding: 0
+	overflow: hidden
+	&__items
+		+rowF
+		+r(650)
+			justify-content: center
+			padding: 30px 0
+
+	&__item
+		padding: 73px 0 83px
+		+col
+		+sizeF(1, 5)
+		border-left: 1px solid #b5eae0
+		text-align: center
+		&:last-child
+			border-right: 1px solid #b5eae0
+		+r(750)
+			padding: 53px 0 63px
+		+r(650)
+			+sizeF(6)
+			padding: 33px 0 43px
+			border: none
+			&:last-child
+				border: none
+		+r(450)
+			padding: 20px 0 30px
+
+	&__number
+		+mont
+		font-weight: bold
+		font-size: 72px
+		line-height: 1
+		margin-bottom: 20px
+		position: relative
+		top: 5px
+		+r(1100)
+			font-size: 60px
+	&__text
+		+mont
+		font-size: 14px
+		text-transform: uppercase
+		+r(1100)
+			font-size: 12px

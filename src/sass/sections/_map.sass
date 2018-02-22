@@ -1,0 +1,55 @@
+.s-map
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 200px
+	padding: 0
+	overflow: hidden
+
+	&__inner
+		position: relative
+		top: -2px
+		display: block
+		text-align: center
+		text-decoration: none
+		color: #f38181
+		&:hover
+			.s-map__icon
+				transform: translateY(-10px)
+			.s-map__action
+				&::after
+					width: 100%
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transform: scale(1.5)
+
+	&__icon
+		font-size: 26px
+		transition: transform .45s ease
+		.icon
+			fill: #f38181
+	
+	&__action
+		position: relative
+		margin-top: 4px
+		padding-bottom: 21px
+		+mont
+		font-size: 24px
+		font-weight: 700
+		line-height: 1
+		text-transform: uppercase
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 50%
+			width: 60px
+			height: 3px
+			background-color: #f38181
+			transform: translateX(-50%)
+			transition: width .45s ease

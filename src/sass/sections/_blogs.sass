@@ -1,0 +1,128 @@
+.s-blogs
+	padding: 105px 0 78px
+	&__title
+		margin-bottom: 86px
+
+.blogs
+	+row
+
+.blog
+	+col
+	+size(4)
+	display: flex
+	flex-direction: column
+	margin-bottom: 20px
+	&:first-child
+		+r(700)
+			+size(12)
+	+r(700)
+		+size(6)
+	+r(500)
+		+size(12)
+
+	&__cover-wrap
+		position: relative
+		display: block
+		+prop(380, 240)
+		&:hover
+			img
+				transform: scale(1.08)
+
+	&__cover
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		overflow: hidden
+		img
+			position: absolute
+			width: 100%
+			height: 100%
+			transition: transform .5s ease
+
+	&__date
+		position: absolute
+		bottom: 10px
+		left: -10px
+
+	&__text-wrap
+		flex: 1 0 auto
+		margin-top: 15px
+
+	&__title
+		+mont
+		margin-top: 0
+		margin-bottom: 7px
+		font-size: 14px
+		font-weight: 400
+		text-transform: uppercase
+		color: #333
+
+	&__text
+		margin: 0
+		font-size: 15px
+		line-height: 1.6
+		color: #999
+
+	&__footer
+		display: flex
+		align-items: center
+		margin-top: 17px
+		padding: 14px 0
+		font-size: 15px
+		font-style: italic
+		line-height: 1.6
+		color: #999
+		border-top: 1px solid #e5e5e5
+		.icon
+			fill: $green
+		> div:not(:last-child)
+			margin-right: 16px
+
+	&__views
+		display: flex
+		align-items: center
+		span
+			margin-left: 7px
+		.icon
+			font-size: 12px
+
+	&__comments
+		display: flex
+		align-items: center
+		.icon
+			font-size: 15px
+		span
+			margin-left: 7px
+
+
+
+.blog-date
+	padding: 12px 15px 13px
+	color: #fff
+	background-color: $green
+	+r(900)
+		padding: 9px 12px 10px
+	+r(500)
+		padding: 12px 15px 13px
+	&__day
+		+mont
+		margin-bottom: 0px
+		font-size: 30px
+		font-weight: 700
+		line-height: 1
+		+r(900)
+			font-size: 23px
+		+r(500)
+			font-size: 30px
+	&__month
+		font-size: 15px
+		font-style: italic
+		font-weight: 300
+		line-height: 1
+		+r(900)
+			font-size: 13px
+		+r(500)
+			font-size: 15px
+
