@@ -332,6 +332,11 @@
     aosAnim('.team-gallery__item', 100);
     aosAnim('.client-review', 100);
     aosAnim('.blog', 100);
+    if (getWidth() <= 850) {
+      const works = [...document.querySelectorAll('.work')];
+      works.forEach(work => work.setAttribute('data-aos', 'fade-up'))
+      aosAnim('.work', 100);
+    }
   });
   // ONLOAD END
 
@@ -442,5 +447,24 @@
     return scrollWidth;
   }
 
+  function getWidth() {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    );
+  }
+
+  function getHeight() {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.documentElement.clientHeight
+    );
+  }
 
 })(this, window, window.document);
